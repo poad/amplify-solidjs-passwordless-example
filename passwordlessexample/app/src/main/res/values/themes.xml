@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.Passwordlessexample" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
