@@ -1,6 +1,6 @@
 import { Button } from "@kobalte/core/button";
 import { confirmSignIn, ConfirmSignInOutput, signIn, SignInOutput } from 'aws-amplify/auth';
-import { JSX, createSignal } from 'solid-js';
+import { JSX, Match, Show, Switch, createSignal } from 'solid-js';
 import { Alert } from '../ui/Alert';
 import { Flex } from '../ui/Flex';
 import { TextInput } from "../ui/TextInput";
@@ -65,29 +65,23 @@ export function SignIn(props: {
     }
   }
 
-  if (signInResult()?.nextStep.signInStep === 'DONE') {
-    return <Alert variation="success">Success</Alert>;
-  }
-
   return (
     <Flex>
-      {
-        signInResult()?.nextStep.signInStep !== 'CONFIRM_SIGN_IN_WITH_EMAIL_CODE' ? (
-          <>
-            <EmailInput
-              value={email()}
-              onChange={(value) => setEmail(() => value)}
-              required
-            />
-            <Button
-              onClick={handleClickNext}
-              class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
-            >
-              Next
-            </Button>
-          </>
-        ) : (
-          <>
+      <Switch fallback={<>
+        <EmailInput
+          value={email()}
+          onChange={(value) => setEmail(() => value)}
+          required
+        />
+        <Button
+          onClick={handleClickNext}
+          class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
+        >
+          Next
+        </Button>
+      </>}>
+        <Match when={signInResult()?.nextStep.signInStep === 'CONFIRM_SIGN_IN_WITH_EMAIL_CODE'}>
+        <>
             <TextInput
               label="One Time Password"
               id="code"
@@ -103,12 +97,14 @@ export function SignIn(props: {
               Sign In
             </Button>
           </>
-        )
-      }
-
-      {
-        error() ? <Alert variation="error">{error().message}</Alert> : <></>
-      }
+        </Match>
+        <Match when={signInResult()?.nextStep.signInStep === 'DONE'}>
+          <Alert variation="success">Success</Alert>
+        </Match>
+      </Switch>
+      <Show when={error()}>
+        <Alert variation="error">{error().message}</Alert>
+      </Show>
     </Flex>
   );
 }
