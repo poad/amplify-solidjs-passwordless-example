@@ -19,7 +19,7 @@
     "@stylistic/eslint-plugin-plus": "^2.13.0",
     "@stylistic/eslint-plugin-ts": "^2.13.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.18.0",
+    "eslint": "^9.19.0",
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-boundaries": "^5.0.1",
     "eslint-plugin-import": "^2.31.0",
@@ -35,7 +35,7 @@
   "dependencies": {
     "@kobalte/core": "^0.13.7",
     "@kobalte/tailwindcss": "^0.9.0",
-    "aws-amplify": "^6.12.1",
+    "aws-amplify": "^6.12.2",
     "solid-icons": "^1.1.0",
     "solid-js": "^1.9.4"
   }
