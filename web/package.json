@@ -18,7 +18,7 @@
     "@stylistic/eslint-plugin-jsx": "^4.2.0",
     "@stylistic/eslint-plugin-plus": "^4.2.0",
     "@stylistic/eslint-plugin-ts": "^4.2.0",
-    "@tailwindcss/postcss": "^4.1.4",
+    "@tailwindcss/postcss": "^4.1.5",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.25.1",
     "eslint-import-resolver-typescript": "^3.10.1",
@@ -27,17 +27,17 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-solid": "^0.14.5",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.4",
+    "tailwindcss": "^4.1.5",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.31.0",
+    "typescript-eslint": "^8.31.1",
     "vite": "^6.3.4",
     "vite-plugin-solid": "^2.11.6"
   },
   "dependencies": {
     "@kobalte/core": "^0.13.9",
     "@kobalte/tailwindcss": "^0.9.0",
-    "aws-amplify": "^6.14.3",
+    "aws-amplify": "^6.14.4",
     "solid-icons": "^1.1.0",
-    "solid-js": "^1.9.5"
+    "solid-js": "^1.9.6"
   }
 }
