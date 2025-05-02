@@ -17,7 +17,9 @@ updates:
           - "*"
 
   - package-ecosystem: npm
-    directory: '/'
+    directories:
+      - '/'
+      - '/web/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
@@ -33,7 +35,7 @@ updates:
           - "*"
 
   - package-ecosystem: gradle
-    directory: '/passwordlessexample/'
+    directory: '/android/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
