@@ -2,11 +2,8 @@
 
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import stylisticTs from '@stylistic/eslint-plugin-ts';
-import stylisticJsx from '@stylistic/eslint-plugin-jsx';
 import tseslint from 'typescript-eslint';
 import solid from 'eslint-plugin-solid';
-// @ts-expect-error ignore type error
 import importPlugin from 'eslint-plugin-import';
 
 import { includeIgnoreFile } from '@eslint/compat';
@@ -19,17 +16,19 @@ const gitignorePath = path.resolve(__dirname, "../.gitignore");
 
 export default tseslint.config(
   includeIgnoreFile(gitignorePath),
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
   {
-    files: ['{bin,lib}/*.ts'],
     ignores: [
       '*.d.ts',
       'node_modules/**/*',
       'out',
       'cdk.out',
     ],
+  },
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  {
+    files: ['{bin,lib}/*.ts'],
     ...importPlugin.flatConfigs.recommended,
     ...importPlugin.flatConfigs.typescript,
     languageOptions: {
@@ -40,8 +39,8 @@ export default tseslint.config(
     },
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylisticTs,
-      '@stylistic/jsx': stylisticJsx,
+      '@stylistic/ts': stylistic,
+      '@stylistic/jsx': stylistic,
       solid,
     },
     settings: {
