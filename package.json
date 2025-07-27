@@ -9,7 +9,7 @@
     "@aws-amplify/backend": "^1.16.1",
     "@aws-amplify/backend-cli": "^1.8.0",
     "aws-cdk": "^2.1022.0",
-    "aws-cdk-lib": "^2.206.0",
+    "aws-cdk-lib": "^2.207.0",
     "constructs": "^10.4.2",
     "esbuild": "^0.25.8",
     "pnpm": "^10.13.1",
