@@ -17,7 +17,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "aws-amplify": "^6.15.5"
+    "aws-amplify": "^6.15.6"
   },
   "packageManager": "pnpm@10.15.1"
 }
