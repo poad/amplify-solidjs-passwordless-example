@@ -12,12 +12,12 @@
     "aws-cdk-lib": "^2.214.0",
     "constructs": "^10.4.2",
     "esbuild": "^0.25.9",
-    "pnpm": "^10.16.0",
+    "pnpm": "^10.16.1",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   },
   "dependencies": {
     "aws-amplify": "^6.15.6"
   },
-  "packageManager": "pnpm@10.16.0"
+  "packageManager": "pnpm@10.16.1"
 }
