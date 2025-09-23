@@ -1,9 +1,10 @@
 // @ts-check
 
+import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-import solid from 'eslint-plugin-solid';
+import solid from "eslint-plugin-solid/configs/typescript";
 import importPlugin from 'eslint-plugin-import';
 
 import { includeIgnoreFile } from '@eslint/compat';
@@ -14,7 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, "../.gitignore");
 
-export default tseslint.config(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
   {
     ignores: [
@@ -29,8 +30,11 @@ export default tseslint.config(
   ...tseslint.configs.stylistic,
   {
     files: ['{bin,lib}/*.ts'],
-    ...importPlugin.flatConfigs.recommended,
-    ...importPlugin.flatConfigs.typescript,
+    ...solid,
+    extends: [
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
+    ],
     languageOptions: {
       parserOptions: {
         ecmaVersion: 'latest',
@@ -39,9 +43,6 @@ export default tseslint.config(
     },
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
-      '@stylistic/jsx': stylistic,
-      solid,
     },
     settings: {
       'import/parsers': {
@@ -59,12 +60,11 @@ export default tseslint.config(
       },
     },
     rules: {
-      '@stylistic/semi': 'error',
+      '@stylistic/semi': ['error', 'always'],
       '@stylistic/ts/indent': ['error', 2],
-      '@stylistic/jsx/jsx-indent': ['error', 2],
-      'comma-dangle': ['error', 'always-multiline'],
-      quotes: ['error', 'single'],
-      semi: ['error', 'always'],
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/arrow-parens': ['error', 'always'],
+      '@stylistic/quotes': ['error', 'single'],
     },
   },
 );
