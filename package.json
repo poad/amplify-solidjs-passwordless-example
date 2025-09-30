@@ -8,16 +8,16 @@
   "devDependencies": {
     "@aws-amplify/backend": "^1.16.1",
     "@aws-amplify/backend-cli": "^1.8.0",
-    "aws-cdk": "^2.1029.2",
-    "aws-cdk-lib": "^2.216.0",
+    "aws-cdk": "^2.1029.3",
+    "aws-cdk-lib": "^2.218.0",
     "constructs": "^10.4.2",
     "esbuild": "^0.25.10",
     "pnpm": "^10.17.1",
-    "tsx": "^4.20.5",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "aws-amplify": "^6.15.6"
+    "aws-amplify": "^6.15.7"
   },
   "packageManager": "pnpm@10.17.1"
 }
