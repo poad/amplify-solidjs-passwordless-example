@@ -6851,7 +6851,7 @@ snapshots:
   '@aws-crypto/sha256-js@5.2.0':
     dependencies:
       '@aws-crypto/util': 5.2.0
-      '@aws-sdk/types': 3.973.0
+      '@aws-sdk/types': 3.723.0
       tslib: 2.8.1
 
   '@aws-crypto/supports-web-crypto@5.2.0':
@@ -6860,7 +6860,7 @@ snapshots:
 
   '@aws-crypto/util@5.2.0':
     dependencies:
-      '@aws-sdk/types': 3.973.0
+      '@aws-sdk/types': 3.723.0
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
 
@@ -13385,7 +13385,7 @@ snapshots:
 
   lower-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.4.1
 
   lower-case@2.0.2:
     dependencies:
