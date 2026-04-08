@@ -36,7 +36,4 @@ overrides:
   ua-parser-js: '>=2'
   vite@>=8.0.0 <=8.0.4: '>=8.0.5'
 
-  '@eslint/js': '^10'
-  eslint: '^10'
-
 trustPolicy: no-downgrade
