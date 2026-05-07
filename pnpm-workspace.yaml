@@ -3,6 +3,12 @@ packages:
   - amplify
   - web
 
+allowBuilds:
+  '@parcel/watcher': false
+  core-js: false
+  esbuild: false
+  unrs-resolver: false
+
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
   - 'lodash@4.18.1'
