@@ -1,12 +1,12 @@
-import { Button } from "@kobalte/core/button";
-import { signOut } from "aws-amplify/auth";
-import { ConsoleLogger } from "aws-amplify/utils";
+import { Flex } from '../ui/Flex';
+import { Button } from '@kobalte/core/button';
+import { signOut } from 'aws-amplify/auth';
+import { ConsoleLogger } from 'aws-amplify/utils';
 
-import { type JSX } from "solid-js/jsx-runtime";
-import { Flex } from "../ui/Flex";
+import { type JSX } from 'solid-js/jsx-runtime';
 
 export function SignOutButton(props: { onSignOut?: () => void }): JSX.Element {
-  const logger = new ConsoleLogger("SignOutButton");
+  const logger = new ConsoleLogger('SignOutButton');
 
   return (
     <Flex>

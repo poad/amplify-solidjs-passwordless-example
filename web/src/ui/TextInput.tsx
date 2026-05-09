@@ -1,5 +1,5 @@
-import { TextField } from "@kobalte/core/text-field";
-import { JSX, Show } from "solid-js";
+import { TextField } from '@kobalte/core/text-field';
+import { JSX, Show } from 'solid-js';
 import './TextInput.css';
 
 export function TextInput(props: {

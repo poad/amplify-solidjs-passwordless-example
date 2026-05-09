@@ -2,8 +2,8 @@ import {
   fetchAuthSession,
   fetchUserAttributes,
   getCurrentUser,
-} from "aws-amplify/auth";
-import { createResource } from "solid-js";
+} from 'aws-amplify/auth';
+import { createResource } from 'solid-js';
 
 export function useSession() {
   return createResource(async () => await fetchAuthSession());

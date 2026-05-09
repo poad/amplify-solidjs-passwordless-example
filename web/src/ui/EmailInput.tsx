@@ -1,4 +1,4 @@
-import { TextInput } from "./TextInput";
+import { TextInput } from './TextInput';
 
 export function EmailInput(props: {
   value: string;
@@ -12,6 +12,6 @@ export function EmailInput(props: {
     value={props.value}
     onChange={(e) => props.onChange(e.currentTarget.value)}
     required={props.required}
-  />
+  />;
 
 }

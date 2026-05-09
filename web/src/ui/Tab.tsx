@@ -1,5 +1,5 @@
-import { Tabs } from "@kobalte/core/tabs";
-import { For, JSX } from "solid-js";
+import { Tabs } from '@kobalte/core/tabs';
+import { For, JSX } from 'solid-js';
 import './Tab.css';
 
 interface Tab {
@@ -24,9 +24,9 @@ export function Tab(props: {
         <Tabs.Indicator class="tabs__indicator" />
       </Tabs.List>
       <For each={props.tabs}>
-          {(items) => (
-            <Tabs.Content class="tabs__content" value={items.id}>{items.content}</Tabs.Content>
-          )}
+        {(items) => (
+          <Tabs.Content class="tabs__content" value={items.id}>{items.content}</Tabs.Content>
+        )}
       </For>
     </Tabs>
   );

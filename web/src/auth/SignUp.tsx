@@ -1,10 +1,10 @@
-import { Button } from "@kobalte/core/button";
+import { Flex } from '../ui/Flex';
+import { Alert } from '../ui/Alert';
+import { EmailInput } from '../ui/EmailInput';
+import { TextInput } from '../ui/TextInput';
+import { createSignal, JSX, Match, Show, Switch } from 'solid-js';
 import { confirmSignUp, signUp } from 'aws-amplify/auth';
-import { createSignal, JSX, Match, Show, Switch } from "solid-js";
-import { Flex } from "../ui/Flex";
-import { Alert } from "../ui/Alert";
-import { EmailInput } from "../ui/EmailInput";
-import { TextInput } from "../ui/TextInput";
+import { Button } from '@kobalte/core/button';
 
 export function SignUp(props: {
   onSignedUp?: () => void;
@@ -85,20 +85,20 @@ export function SignUp(props: {
           </Button>
         </Match>
         <Match when={signUpNextStep() === 'CONFIRM_SIGN_UP'}>
-        <TextInput
-              label="Confirmation Code"
-              id="code"
-              type="text"
-              value={code()}
-              onChange={(e) => setCode(() => e.currentTarget.value)}
-              required
-            />
-            <Button
-              onClick={handleClickSignUp}
-              class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
-            >
-              Create Account
-            </Button>
+          <TextInput
+            label="Confirmation Code"
+            id="code"
+            type="text"
+            value={code()}
+            onChange={(e) => setCode(() => e.currentTarget.value)}
+            required
+          />
+          <Button
+            onClick={handleClickSignUp}
+            class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
+          >
+            Create Account
+          </Button>
         </Match>
       </Switch>
       <Show when={error()}>

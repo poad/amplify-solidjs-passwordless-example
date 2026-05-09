@@ -1,10 +1,10 @@
-import { Button } from "@kobalte/core/button";
-import { confirmSignIn, ConfirmSignInOutput, signIn, SignInOutput } from 'aws-amplify/auth';
-import { JSX, Match, Show, Switch, createSignal } from 'solid-js';
 import { Alert } from '../ui/Alert';
 import { Flex } from '../ui/Flex';
-import { TextInput } from "../ui/TextInput";
-import { EmailInput } from "../ui/EmailInput";
+import { TextInput } from '../ui/TextInput';
+import { EmailInput } from '../ui/EmailInput';
+import { JSX, Match, Show, Switch, createSignal } from 'solid-js';
+import { confirmSignIn, ConfirmSignInOutput, signIn, SignInOutput } from 'aws-amplify/auth';
+import { Button } from '@kobalte/core/button';
 
 export function SignIn(props: {
   onSignedIn: () => void;
@@ -81,7 +81,7 @@ export function SignIn(props: {
         </Button>
       </>}>
         <Match when={signInResult()?.nextStep.signInStep === 'CONFIRM_SIGN_IN_WITH_EMAIL_CODE'}>
-        <>
+          <>
             <TextInput
               label="One Time Password"
               id="code"

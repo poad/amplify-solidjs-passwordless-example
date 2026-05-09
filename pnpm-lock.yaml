@@ -89,7 +89,7 @@ importers:
         specifier: ^5.10.0
         version: 5.10.0(eslint@10.3.0(jiti@2.6.1))
       '@tailwindcss/postcss':
-        specifier: ^4.2
+        specifier: ^4.2.4
         version: 4.2.4
       autoprefixer:
         specifier: ^10.5.0
@@ -101,10 +101,10 @@ importers:
         specifier: ^4.4.4
         version: 4.4.4(eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.59.1(eslint@10.3.0(jiti@2.6.1))(typescript@6.0.3))(eslint-import-resolver-node@0.3.9)(eslint@10.3.0(jiti@2.6.1)))(eslint@10.3.0(jiti@2.6.1))
       eslint-plugin-boundaries:
-        specifier: ^6
+        specifier: ^6.0.2
         version: 6.0.2(@typescript-eslint/parser@8.59.1(eslint@10.3.0(jiti@2.6.1))(typescript@6.0.3))(eslint-import-resolver-typescript@4.4.4(eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.59.1(eslint@10.3.0(jiti@2.6.1))(typescript@6.0.3))(eslint-import-resolver-node@0.3.9)(eslint@10.3.0(jiti@2.6.1)))(eslint@10.3.0(jiti@2.6.1)))(eslint@10.3.0(jiti@2.6.1))
       eslint-plugin-import-x:
-        specifier: ^4
+        specifier: ^4.16.2
         version: 4.16.2(@typescript-eslint/utils@8.59.1(eslint@10.3.0(jiti@2.6.1))(typescript@6.0.3))(eslint-import-resolver-node@0.3.9)(eslint@10.3.0(jiti@2.6.1))
       eslint-plugin-promise:
         specifier: ^7.3.0
@@ -112,6 +112,9 @@ importers:
       eslint-plugin-solid:
         specifier: ^0.14.5
         version: 0.14.5(eslint@10.3.0(jiti@2.6.1))(typescript@6.0.3)
+      jiti:
+        specifier: ^2.6.1
+        version: 2.6.1
       postcss:
         specifier: ^8.5.13
         version: 8.5.13
@@ -119,7 +122,7 @@ importers:
         specifier: ^4.2.4
         version: 4.2.4
       typescript:
-        specifier: ^6
+        specifier: ^6.0.3
         version: 6.0.3
       typescript-eslint:
         specifier: ^8.59.1

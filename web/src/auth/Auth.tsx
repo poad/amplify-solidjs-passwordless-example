@@ -1,12 +1,11 @@
-// import { Tabs } from "@kobalte/core/tabs";
-import SignOutButton from './SignOutButton';
-import { SignIn } from './SignIn';
-import { SignUp } from './SignUp';
+import SignOutButton from './SignOutButton.jsx';
+import { SignIn } from './SignIn.jsx';
+import { SignUp } from './SignUp.jsx';
+import { View } from '../ui/View.jsx';
+import * as auth from './hooks.js';
+import './Auth.css';
+import { Tab } from '../ui/Tab.jsx';
 import { createSignal, Match, Switch } from 'solid-js';
-import { View } from "../ui/View";
-import * as auth from "./hooks";
-import './Auth.css'
-import { Tab } from "../ui/Tab";
 
 export function Auth() {
   const [session, { refetch }] = auth.useSession();
@@ -17,7 +16,7 @@ export function Auth() {
       <View>
         <Tab tabs={[
           { id: 'signIn', name: 'Sign In', content: <SignIn onSignedIn={() => refetch()} /> },
-          { id: 'signUp', name: 'Sign Up', content: <SignUp /> }
+          { id: 'signUp', name: 'Sign Up', content: <SignUp /> },
         ]} value={tab()} onChange={setTab} />
       </View>
 
