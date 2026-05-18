@@ -12,11 +12,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@eslint/compat": "^2.0.5",
+    "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/postcss": "^4.3.0",
     "autoprefixer": "^10.5.0",
     "eslint": "^10.3.0",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -26,10 +26,10 @@
     "eslint-plugin-solid": "^0.14.5",
     "jiti": "^2.7.0",
     "postcss": "^8.5.14",
-    "tailwindcss": "^4.2.4",
+    "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.11",
+    "typescript-eslint": "^8.59.3",
+    "vite": "^8.0.12",
     "vite-plugin-solid": "^2.11.12"
   },
   "dependencies": {
