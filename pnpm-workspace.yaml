@@ -21,6 +21,7 @@ minimumReleaseAgeExclude:
   - handlebars@4.7.9
   - lodash@4.17.24
   - immutable@3.8.3
+  - js-cookie@3.0.6
 
 overrides:
   chokidar: '>=5'
@@ -31,6 +32,7 @@ overrides:
   handlebars@>=4.0.0 <=4.7.8: ^4.7.9
   handlebars@>=4.6.0 <=4.7.8: ^4.7.9
   immutable@<3.8.3: ^3.8.3
+  js-cookie@<=3.0.5: ^3.0.6
   lodash@<=4.17.23: ^4.17.24
   lodash@>=4.0.0 <=4.17.23: ^4.17.24
   minimatch@>=10.0.0 <10.2.1: ^10.2.1
