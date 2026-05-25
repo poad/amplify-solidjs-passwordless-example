@@ -13,11 +13,11 @@
     "constructs": "^10.6.0",
     "esbuild": "^0.27.7",
     "pnpm": "^10.33.4",
-    "tsx": "^4.22.1",
+    "tsx": "^4.22.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "aws-amplify": "^6.17.0"
   },
-  "packageManager": "pnpm@11.1.2"
+  "packageManager": "pnpm@11.1.3"
 }
