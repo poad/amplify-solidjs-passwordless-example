@@ -1,8 +1,8 @@
 [versions]
 agp = "9.2.1"
 awsAuthCognito = "2.37.0"
-cognitoidentity = "1.6.80"
-cognitoidentityprovider = "1.6.80"
+cognitoidentity = "1.6.82"
+cognitoidentityprovider = "1.6.82"
 desugar_jdk_libs = "2.1.5"
 kotlin = "2.3.21"
 coreKtx = "1.18.0"
