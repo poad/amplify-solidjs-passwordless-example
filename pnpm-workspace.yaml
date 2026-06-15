@@ -14,7 +14,7 @@ blockExoticSubdeps: true
 minimumReleaseAge: 10080 # 7 days in minutes
 
 minimumReleaseAgeExclude:
-  - pnpm@11.6.0
+  - pnpm@11.7.0
   - '@esbuild/aix-ppc64@0.28.1'
   - '@esbuild/android-arm64@0.28.1'
   - '@esbuild/android-arm@0.28.1'
