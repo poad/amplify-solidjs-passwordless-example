@@ -1,20 +1,19 @@
-import { defineConfig } from 'eslint/config';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { parser, configs } from 'typescript-eslint';
 import { importX, createNodeResolver } from 'eslint-plugin-import-x';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import boundaries from "eslint-plugin-boundaries";
+import boundaries from 'eslint-plugin-boundaries';
 
-import solid from "eslint-plugin-solid/configs/typescript";
+import solid from 'eslint-plugin-solid/configs/typescript';
 
-import { includeIgnoreFile } from '@eslint/compat';
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, "../.gitignore");
+const gitignorePath = path.resolve(__dirname, '../.gitignore');
 
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
@@ -29,11 +28,10 @@ export default defineConfig(
       'dist',
     ],
   },
-  eslint.configs.recommended,
-  ...configs.strict,
-  ...configs.stylistic,
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['src/**/*.{ts,tsx}', 'eslint.config.ts'],
     ...solid,
     languageOptions: {
       parser,
@@ -52,7 +50,9 @@ export default defineConfig(
       boundaries,
     },
     extends: [
-      'import-x/flat/recommended',
+      eslint.configs.recommended,
+      configs.strict,
+      configs.stylistic,
     ],
     settings: {
       'import-x/resolver-next': [
@@ -61,10 +61,10 @@ export default defineConfig(
         }),
         createNodeResolver(),
       ],
-      "boundaries/elements": [
-        { type: "controller", pattern: "controllers/*" },
-        { type: "model", pattern: "models/*" },
-        { type: "view", pattern: "views/*" }
+      'boundaries/elements': [
+        { type: 'controller', pattern: 'controllers/*' },
+        { type: 'model', pattern: 'models/*' },
+        { type: 'view', pattern: 'views/*' },
       ],
     },
     rules: {
@@ -90,6 +90,6 @@ export default defineConfig(
           ],
         },
       ],
-    }
+    },
   },
 );

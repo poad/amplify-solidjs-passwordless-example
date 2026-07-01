@@ -8,15 +8,15 @@
   "devDependencies": {
     "@aws-amplify/backend": "^1.23.0",
     "@aws-amplify/backend-cli": "^1.8.3",
-    "aws-cdk": "^2.1126.0",
-    "aws-cdk-lib": "^2.258.0",
+    "aws-cdk": "^2.1128.1",
+    "aws-cdk-lib": "^2.260.0",
     "constructs": "^10.6.0",
     "esbuild": "^0.28.1",
     "tsx": "^4.22.4",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "dependencies": {
-    "aws-amplify": "^6.17.0"
+    "aws-amplify": "^6.18.0"
   },
   "devEngines": {
     "packageManager": {
@@ -26,17 +26,12 @@
     },
     "runtime": {
       "name": "node",
-      "version": "^24.16.0",
+      "version": "^24.18.0",
       "onFail": "download"
     }
   },
   "engines": {
     "npm": "use pnpm please!",
-    "yarn": "use pnpm please!",
-    "runtime": {
-      "name": "node",
-      "version": "^24.16.0",
-      "onFail": "download"
-    }
+    "yarn": "use pnpm please!"
   }
 }
