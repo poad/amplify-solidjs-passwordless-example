@@ -1,10 +1,10 @@
 [versions]
 agp = "9.3.0"
 awsAuthCognito = "2.38.1"
-cognitoidentity = "1.8.5"
-cognitoidentityprovider = "1.8.5"
+cognitoidentity = "1.8.6"
+cognitoidentityprovider = "1.8.6"
 desugar_jdk_libs = "2.1.5"
-kotlin = "2.4.0"
+kotlin = "2.4.10"
 coreKtx = "1.19.0"
 appcompat = "1.7.1"
 composeBom = "2026.06.01"
