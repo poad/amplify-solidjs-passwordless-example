@@ -1,6 +1,6 @@
 [versions]
 agp = "9.5.0"
-awsAuthCognito = "2.42.0"
+awsAuthCognito = "2.43.0"
 cognitoidentity = "1.9.24"
 cognitoidentityprovider = "1.9.24"
 desugar_jdk_libs = "2.1.5"
