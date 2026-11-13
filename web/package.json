@@ -14,12 +14,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.4",
+    "@tailwindcss/postcss": "^4.3.5",
     "autoprefixer": "^10.6.2",
-    "oxfmt": "^0.76.0",
-    "oxlint": "^1.91.0",
+    "oxfmt": "^0.77.0",
+    "oxlint": "^1.92.0",
     "postcss": "^8.5.32",
-    "tailwindcss": "^4.3.4",
+    "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.6",
     "vite-plugin-solid": "^2.11.15"
