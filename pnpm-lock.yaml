@@ -846,8 +846,8 @@ packages:
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.3':
     resolution: {integrity: sha512-98We1QWfin9vtuuQtNFhIIAEWb8CreyYTAP0Vn8HqSBoNiFJM9nZgifJeQawT9Wq0NX1HCNFlxCyTccIrK1PSA==}
 
-  '@aws-cdk/aws-service-spec@0.1.228':
-    resolution: {integrity: sha512-0+B3IiFBhv6thMfCGCi4xax3Dm+ye8CTLLaxGLBGWFYUQ0jb0AFXR21v9pIvt1FDt9yzNDaWabDDUJRoTMOoeA==}
+  '@aws-cdk/aws-service-spec@0.1.229':
+    resolution: {integrity: sha512-WLfCRxWAbvB+1o5rUOg3J6Fll9BlVOoqEsWXo9A47a/ZE+4VEGGlmBixsnMKOfZ6zhWmz5m4dvL/sQeO9VKVwg==}
 
   '@aws-cdk/cdk-assets-lib@1.5.2':
     resolution: {integrity: sha512-nHPMAZEGfAEftZ09CY8Bt4nJoo4Ovyha25LuZ44djwY7bFcHFiBRufIPv0RLjF7k6C1Voi/YNYp6W8Z0mBKoXA==}
@@ -894,8 +894,8 @@ packages:
   '@aws-cdk/service-spec-types@0.0.292':
     resolution: {integrity: sha512-ZFLPDRSqCKPx9wk4wH5HWJ18DRYLsUOXgUJxkvGvSnsUZzFaNwIfrZ2jz/xrXddyGYDEZnt0Zxkc5VfsKjST9Q==}
 
-  '@aws-cdk/service-spec-types@0.0.294':
-    resolution: {integrity: sha512-TPm/H7bEG//3LBsp3BrjImB7CCOpbmvtJ/SzC/a7y1Q7Zi6ZQjYl4nXDnY16VrfVmneHIo14dhmNbcpHCL3PHA==}
+  '@aws-cdk/service-spec-types@0.0.295':
+    resolution: {integrity: sha512-JDBwK1aR6AG1nZ+Q5E5J1ODX1Y38efOfQ5JhHL6NQdWY3wVFX024O3IXZ06Doi+gTRxGbzkdpDdlIDVaAPZ0Nw==}
 
   '@aws-cdk/toolkit-lib@1.32.0':
     resolution: {integrity: sha512-gZ/gWngRa3ZKwPOcw4zw2+NkJe73mG5XK1/FOEiz6yERJqI+s0QpXCnnOnsDr6l9o6w3Uexpfhd7wueho33hww==}
@@ -6108,9 +6108,9 @@ snapshots:
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.3': {}
 
-  '@aws-cdk/aws-service-spec@0.1.228':
+  '@aws-cdk/aws-service-spec@0.1.229':
     dependencies:
-      '@aws-cdk/service-spec-types': 0.0.294
+      '@aws-cdk/service-spec-types': 0.0.295
       '@cdklabs/tskb': 0.0.4
 
   '@aws-cdk/cdk-assets-lib@1.5.2':
@@ -6149,7 +6149,7 @@ snapshots:
 
   '@aws-cdk/cloudformation-diff@2.187.7(@aws-sdk/client-cloudformation@3.1164.0)':
     dependencies:
-      '@aws-cdk/aws-service-spec': 0.1.228
+      '@aws-cdk/aws-service-spec': 0.1.229
       '@aws-cdk/service-spec-types': 0.0.292
       '@aws-sdk/client-cloudformation': 3.1164.0
       chalk: 4.1.2
@@ -6166,7 +6166,7 @@ snapshots:
     dependencies:
       '@cdklabs/tskb': 0.0.4
 
-  '@aws-cdk/service-spec-types@0.0.294':
+  '@aws-cdk/service-spec-types@0.0.295':
     dependencies:
       '@cdklabs/tskb': 0.0.4
 
