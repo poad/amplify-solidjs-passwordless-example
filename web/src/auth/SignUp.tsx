@@ -1,10 +1,11 @@
-import { Flex } from '../ui/Flex';
 import { Alert } from '../ui/Alert';
 import { EmailInput } from '../ui/EmailInput';
+import { Flex } from '../ui/Flex';
 import { TextInput } from '../ui/TextInput';
-import { createSignal, JSX, Match, Show, Switch } from 'solid-js';
+
+import type { JSX } from '@solidjs/web';
 import { confirmSignUp, signUp } from 'aws-amplify/auth';
-import { Button } from '@kobalte/core/button';
+import { createSignal, Match, Show, Switch } from 'solid-js';
 
 export function SignUp(props: {
   onSignedUp?: () => void;
@@ -19,7 +20,7 @@ export function SignUp(props: {
     const value = email();
     try {
       if (value.length === 0) {
-        setError(() => new Error('Email is must not be empty.'));
+        setError(new Error('Email is must not be empty.'));
         return;
       }
 
@@ -46,7 +47,9 @@ export function SignUp(props: {
       return;
     }
     try {
-      const { nextStep: { signUpStep } } = await confirmSignUp({
+      const {
+        nextStep: { signUpStep },
+      } = await confirmSignUp({
         username: email(),
         confirmationCode: value,
       });
@@ -72,17 +75,13 @@ export function SignUp(props: {
           <Alert variation="success">Success</Alert>;
         </Match>
         <Match when={signUpNextStep() !== 'CONFIRM_SIGN_UP'}>
-          <EmailInput
-            value={email()}
-            onChange={(value) => setEmail(() => value)}
-            required
-          />
-          <Button
+          <EmailInput value={email()} onChange={(value) => setEmail(() => value)} required />
+          <button
             onClick={handleClickNext}
-            class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
+            class="bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md"
           >
             Next
-          </Button>
+          </button>
         </Match>
         <Match when={signUpNextStep() === 'CONFIRM_SIGN_UP'}>
           <TextInput
@@ -93,16 +92,16 @@ export function SignUp(props: {
             onChange={(e) => setCode(() => e.currentTarget.value)}
             required
           />
-          <Button
+          <button
             onClick={handleClickSignUp}
-            class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
+            class="bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md"
           >
             Create Account
-          </Button>
+          </button>
         </Match>
       </Switch>
       <Show when={error()}>
-        <Alert variation="error">{error().message}</Alert>
+        <Alert variation="error">{error()?.message}</Alert>
       </Show>
     </Flex>
   );

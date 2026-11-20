@@ -1,7 +1,5 @@
-import { JSX } from 'solid-js';
+import { JSX } from '@solidjs/web';
 
-export function Flex(props: {
-  children: JSX.Element;
-}): JSX.Element {
-  return <div class='flex flex-col gap-1'>{props.children}</div>;
+export function Flex(props: { children: JSX.Element }): JSX.Element {
+  return <div class="flex flex-col gap-1">{props.children}</div>;
 }

@@ -11,11 +11,7 @@
   ],
   "singleQuote": true,
   "sortImports": {
-    "groups": [
-      "builtin",
-      ["sibling", "parent"],
-      "index"
-    ],
+    "groups": ["builtin", ["sibling", "parent"], "index"],
     "newlinesBetween": true
   }
 }
