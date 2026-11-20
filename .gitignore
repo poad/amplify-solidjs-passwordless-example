@@ -7,3 +7,5 @@ dist
 .kotlin
 !amplify_outputs-dummy.json
 .DS_Store
+
+github_pull_request.md

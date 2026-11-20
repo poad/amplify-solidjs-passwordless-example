@@ -1,5 +1,5 @@
-import { Tabs } from '@kobalte/core/tabs';
-import { For, JSX } from 'solid-js';
+import type { JSX } from '@solidjs/web';
+import { For } from 'solid-js';
 import './Tab.css';
 
 interface Tab {
@@ -14,20 +14,30 @@ export function Tab(props: {
   onChange: (value: string) => void;
 }): JSX.Element {
   return (
-    <Tabs value={props.value} onChange={props.onChange} class="tabs">
-      <Tabs.List class="tabs__list">
+    <div class="tabs">
+      <div class="tabs__list" role="tablist">
         <For each={props.tabs}>
           {(items) => (
-            <Tabs.Trigger class="tabs__trigger" value={items.id}>{items.name}</Tabs.Trigger>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={props.value === items.id ? 'true' : 'false'}
+              class="tabs__trigger"
+              onClick={() => props.onChange(items.id)}
+            >
+              {items.name}
+            </button>
           )}
         </For>
-        <Tabs.Indicator class="tabs__indicator" />
-      </Tabs.List>
+        <div class="tabs__indicator" />
+      </div>
       <For each={props.tabs}>
         {(items) => (
-          <Tabs.Content class="tabs__content" value={items.id}>{items.content}</Tabs.Content>
+          <div hidden={props.value !== items.id} role="tabpanel" class="tabs__content">
+            {items.content}
+          </div>
         )}
       </For>
-    </Tabs>
+    </div>
   );
 }

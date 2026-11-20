@@ -1,26 +1,28 @@
 import { Alert } from '../ui/Alert';
+import { EmailInput } from '../ui/EmailInput';
 import { Flex } from '../ui/Flex';
 import { TextInput } from '../ui/TextInput';
-import { EmailInput } from '../ui/EmailInput';
-import { JSX, Match, Show, Switch, createSignal } from 'solid-js';
+
+import type { JSX } from '@solidjs/web';
 import { confirmSignIn, ConfirmSignInOutput, signIn, SignInOutput } from 'aws-amplify/auth';
-import { Button } from '@kobalte/core/button';
+import { Match, Show, Switch, createSignal } from 'solid-js';
 
 export function SignIn(props: {
   onSignedIn: () => void;
   onError?: (error: Error) => void;
 }): JSX.Element {
-
   const [email, setEmail] = createSignal<string>('');
   const [otp, setOtp] = createSignal<string>('');
-  const [error, setError] = createSignal<{ message?: string }>();
+  const [error, setError] = createSignal<Error>();
 
-  const [signInResult, setSignInResult] = createSignal<SignInOutput | ConfirmSignInOutput | undefined>();
+  const [signInResult, setSignInResult] = createSignal<
+    SignInOutput | ConfirmSignInOutput | undefined
+  >();
 
   async function handleClickNext() {
     const input = email();
     if (input.length === 0) {
-      setError(() => new Error('Email is must not be empty.'));
+      setError(new Error('Email is must not be empty.'));
       return;
     }
     setError(() => undefined);
@@ -36,7 +38,7 @@ export function SignIn(props: {
       });
       setSignInResult(() => result);
     } catch (e) {
-      setError(() => e);
+      setError(e instanceof Error ? e : new Error(String(e)));
       props.onError?.(e as Error);
     }
   }
@@ -44,7 +46,7 @@ export function SignIn(props: {
   async function handleClickSignIn() {
     const input = otp();
     if (input.length === 0) {
-      setError(() => new Error('Confirmation Code is must not be empty.'));
+      setError(new Error('Confirmation Code is must not be empty.'));
       return;
     }
 
@@ -60,26 +62,26 @@ export function SignIn(props: {
         props.onSignedIn();
       }
     } catch (e) {
-      setError(e);
+      setError(e instanceof Error ? e : new Error(String(e)));
       props.onError?.(e as Error);
     }
   }
 
   return (
     <Flex>
-      <Switch fallback={<>
-        <EmailInput
-          value={email()}
-          onChange={(value) => setEmail(() => value)}
-          required
-        />
-        <Button
-          onClick={handleClickNext}
-          class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
-        >
-          Next
-        </Button>
-      </>}>
+      <Switch
+        fallback={
+          <>
+            <EmailInput value={email()} onChange={(value) => setEmail(() => value)} required />
+            <button
+              onClick={handleClickNext}
+              class="bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md"
+            >
+              Next
+            </button>
+          </>
+        }
+      >
         <Match when={signInResult()?.nextStep.signInStep === 'CONFIRM_SIGN_IN_WITH_EMAIL_CODE'}>
           <>
             <TextInput
@@ -90,12 +92,12 @@ export function SignIn(props: {
               onChange={(e) => setOtp(() => e.currentTarget.value)}
               required
             />
-            <Button
+            <button
               onClick={handleClickSignIn}
-              class='bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md'
+              class="bg-orange-400 text-white w-fit px-6 py-1 mx-auto rounded-md"
             >
               Sign In
-            </Button>
+            </button>
           </>
         </Match>
         <Match when={signInResult()?.nextStep.signInStep === 'DONE'}>
@@ -103,7 +105,7 @@ export function SignIn(props: {
         </Match>
       </Switch>
       <Show when={error()}>
-        <Alert variation="error">{error().message}</Alert>
+        <Alert variation="error">{error()?.message}</Alert>
       </Show>
     </Flex>
   );
