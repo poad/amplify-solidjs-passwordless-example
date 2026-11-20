@@ -23,7 +23,7 @@
     "@solidjs/vite-plugin": "^3.0.1",
     "@tailwindcss/postcss": "^4.3.5",
     "autoprefixer": "^10.6.2",
-    "oxfmt": "^0.77.0",
+    "oxfmt": "^0.78.0",
     "oxlint": "^1.93.0",
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.5",
