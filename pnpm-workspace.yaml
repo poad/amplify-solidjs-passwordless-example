@@ -14,7 +14,7 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@12.21.0
+  - pnpm@12.23.0
   - '@solidjs/router@2.0.0'
   - '@solidjs/signals@2.0.3'
   - '@solidjs/web@2.0.0 || 2.0.3'
